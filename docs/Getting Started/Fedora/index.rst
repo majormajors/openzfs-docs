@@ -30,9 +30,13 @@ see below.
 
 #. Install kernel headers::
 
-     dnf install -y kernel-devel-$(uname -r | awk -F'-' '{print $1}')
+    dnf install -y kernel-devel-$(uname -r | awk -F'-' '{print $1}')
 
    ``kernel-devel`` package must be installed before ``zfs`` package.
+
+#. Enable zfs repo (dnf5)::
+
+    dnf config-manager setopt zfs.enabled=true
 
 #. Install ZFS packages::
 
